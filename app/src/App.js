@@ -1,10 +1,18 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Hero from './pages/Hero';
+import ModalSignedUpUsers from './components/ModalSignedUpUsers';
 
 function App() {
   return (
     <div className="bg-black  poppins  ">
-      <Hero />
+
+      <BrowserRouter>        
+        <Routes>
+          <Route path='/' element={<Hero />} />
+          <Route path='/user' element={<ModalSignedUpUsers />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
